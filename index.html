@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Валентинка 💖</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="noise"></div>
+
+    <main class="card" id="card">
+        <header class="top">
+            <div class="badge">14 февраля 💘</div>
+            <div class="spark" aria-hidden="true">✨</div>
+        </header>
+
+        <section class="hero">
+            <div class="heart-wrap" aria-hidden="true">
+                <div class="heart"></div>
+                <div class="heart glow"></div>
+            </div>
+
+            <h1>Для тебя</h1>
+            <p class="subtitle" id="typed"></p>
+
+            <div class="message">
+                <p>
+                    Ты — мой любимый человек. Я хочу, чтобы этот день был про нас: улыбки, тепло и маленькие чудеса.
+                </p>
+                <p class="small">Нажми кнопки ниже 👇</p>
+            </div>
+
+            <!-- Фото -->
+            <div class="photo-wrapper">
+                <img src="photo.jpg" alt="Настюша ❤️" class="photo" id="photo" />
+                <div class="photo-caption">Моя Настюша 💗</div>
+            </div>
+
+            <div class="actions">
+                <button class="btn primary" id="yesBtn">Да 💞</button>
+                <button class="btn ghost" id="noBtn">Нет 🙈</button>
+            </div>
+        </section>
+
+        <section class="reveal" id="reveal" hidden>
+            <div class="reveal-box">
+                <h2>Урааа! 🥰</h2>
+                <p id="finalText">
+                    Тогда официальный план: обнимашки + вкусняшки + прогулка/кино (выбирай).
+                </p>
+                <div class="mini-actions">
+                    <button class="btn secondary" id="confettiBtn">Ещё сердечек!</button>
+                    <a class="btn link" id="copyBtn" href="#">Скопировать послание</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>Сделано с любовью 💗</span>
+            <span class="dot">•</span>
+            <span id="date"></span>
+        </footer>
+    </main>
+
+    <canvas id="fx"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
