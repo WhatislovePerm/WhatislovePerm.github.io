@@ -26,6 +26,7 @@
       --blue: #667180;
       --rose: #eeb9aa;
       --caramel: #c8894f;
+      --chocolate: #5b3427;
       --sand: #cdbb9f;
       --milk: #f2eee5;
 
@@ -377,15 +378,17 @@
       right: 14px;
       bottom: 15px;
       color: #43392f;
-      font-family: "Comic Sans MS", "Trebuchet MS", cursive;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1;
-      transform: rotate(-5deg);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transform: rotate(0deg);
     }
 
     .polaroid--nastya .polaroid-caption {
-      transform: rotate(4deg);
+      transform: rotate(0deg);
     }
 
     /* ---- timeline ---- */
@@ -732,13 +735,13 @@
             <div class="polaroid-frame">
               <img src="./assets/child-vlad-cutout.png" alt="Владислав в детстве" loading="lazy">
             </div>
-            <figcaption class="polaroid-caption">жених Влад</figcaption>
+            <figcaption class="polaroid-caption">Жених Влад</figcaption>
           </figure>
           <figure class="polaroid polaroid--nastya">
             <div class="polaroid-frame">
               <img src="./assets/child-nastya-cutout.png" alt="Анастасия в детстве" loading="lazy">
             </div>
-            <figcaption class="polaroid-caption">невеста Настя</figcaption>
+            <figcaption class="polaroid-caption">Невеста Настя</figcaption>
           </figure>
         </div>
         <div class="heart-line heart-line--bottom" aria-hidden="true">
@@ -820,6 +823,7 @@
           <div class="swatch"><div class="swatch__color" style="background: var(--blue);"></div><div class="swatch__label">Синий</div></div>
           <div class="swatch"><div class="swatch__color" style="background: var(--terra-dark);"></div><div class="swatch__label">Винный</div></div>
           <div class="swatch"><div class="swatch__color" style="background: var(--rose);"></div><div class="swatch__label">Розовый</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--chocolate);"></div><div class="swatch__label">Шоколад</div></div>
           <div class="swatch"><div class="swatch__color" style="background: var(--caramel);"></div><div class="swatch__label">Карамель</div></div>
           <div class="swatch"><div class="swatch__color" style="background: var(--sand);"></div><div class="swatch__label">Беж</div></div>
           <div class="swatch"><div class="swatch__color" style="background: var(--milk);"></div><div class="swatch__label">Молочный</div></div>
@@ -834,7 +838,7 @@
         <div class="seal">寿</div>
         <p class="lbl">О подарках</p>
         <p class="dark-text dark-text--large">Друзья, если вы задумываетесь о презенте к нашему празднику, мы будем рады подаркам в конвертах.</p>
-        <p class="dark-text">Просим не дарить нам цветы: мы совсем не успеем насладиться их красотой. Вместо букета можно выбрать чай, кофе, пластинку или сертификат.</p>
+        <p class="dark-text">Просим не дарить нам цветы: мы совсем не успеем насладиться их красотой. Вместо букета можно выбрать бутылочку вашего любимого вина.</p>
       </section>
 
       <section class="section section--soft reveal" id="rsvp">
