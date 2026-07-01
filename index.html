@@ -149,28 +149,37 @@
     /* ---- cover ---- */
     .cover { padding-top: 38px; padding-bottom: 60px; }
 
-    .cover-art {
+    .cover-heart-line {
       position: relative;
-      height: 245px;
-      margin: -6px -24px 0;
-      background: url("assets/reference-cover.png") center / contain no-repeat;
-      mix-blend-mode: multiply;
-      opacity: .95;
+      height: 92px;
+      margin: 2px -34px 8px;
     }
 
-    .cover-art::after {
-      content: "В&Н";
+    .cover-heart-line svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .cover-heart-line path {
+      fill: none;
+      stroke: #43392f;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      opacity: .86;
+    }
+
+    .cover-heart {
       position: absolute;
-      inset: 50% 0 auto;
-      color: rgba(181, 104, 73, .62);
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: 104px;
+      left: 50%;
+      top: 42px;
+      color: #5a2c21;
+      font-size: 46px;
       line-height: 1;
-      transform: translateY(-46%);
+      transform: translate(-50%, -50%);
     }
 
-    .cover-copy { position: relative; margin-top: -10px; }
+    .cover-copy { position: relative; margin-top: 0; }
 
     .script-line {
       margin: 14px 0 0;
@@ -257,6 +266,126 @@
       font-size: 8px;
       letter-spacing: .18em;
       text-transform: uppercase;
+    }
+
+    /* ---- childhood polaroids ---- */
+    .childhood {
+      padding: 58px 42px 66px;
+      background: #fbfaf7;
+    }
+
+    .childhood-title {
+      margin-top: 16px;
+      color: var(--terra-dark);
+      font-family: var(--serif);
+      font-size: clamp(42px, 10vw, 64px);
+      font-weight: 400;
+      letter-spacing: .03em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .heart-line {
+      position: relative;
+      height: 48px;
+      margin: 0 auto 10px;
+      max-width: 430px;
+    }
+
+    .heart-line svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .heart-line path {
+      fill: none;
+      stroke: rgba(154, 140, 118, .42);
+      stroke-width: 1.4;
+    }
+
+    .heart {
+      position: absolute;
+      color: #b51f2e;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .heart-line--top .heart { right: 92px; top: 6px; }
+    .heart-line--bottom { margin: 18px auto 0; transform: rotate(180deg); }
+    .heart-line--bottom .heart { right: 72px; top: 7px; transform: rotate(180deg); }
+
+    .child-photos {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      margin: 34px auto 0;
+      max-width: 420px;
+      min-height: 310px;
+    }
+
+    .polaroid {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      padding: 12px 12px 48px;
+      background: #fff;
+      box-shadow: 0 12px 20px rgba(67, 57, 47, .13);
+    }
+
+    .polaroid--vlad {
+      transform: rotate(-6deg) translateX(12px);
+    }
+
+    .polaroid--nastya {
+      transform: rotate(7deg) translateX(-12px) translateY(20px);
+    }
+
+    .polaroid-frame {
+      width: 178px;
+      height: 178px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      background: #f4f0e7;
+    }
+
+    .polaroid-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      filter: drop-shadow(0 7px 8px rgba(67, 57, 47, .12));
+    }
+
+    .polaroid--nastya .polaroid-frame img {
+      width: 86%;
+      height: 98%;
+    }
+
+    .polaroid--vlad .polaroid-frame img {
+      width: 96%;
+      height: 104%;
+    }
+
+    .polaroid-caption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 15px;
+      color: #43392f;
+      font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+      transform: rotate(-5deg);
+    }
+
+    .polaroid--nastya .polaroid-caption {
+      transform: rotate(4deg);
     }
 
     /* ---- timeline ---- */
@@ -528,8 +657,14 @@
       .invite { width: 100%; min-height: 100vh; border-radius: 0; }
       .section { padding: 48px 26px; }
       .cover { padding-top: 30px; }
-      .cover-art { height: 215px; margin-inline: -18px; }
+      .cover-heart-line { height: 82px; margin-inline: -28px; }
+      .cover-heart { top: 39px; font-size: 40px; }
       .countdown { grid-template-columns: repeat(2, 1fr); }
+      .childhood { padding-inline: 24px; }
+      .child-photos { max-width: 360px; min-height: 270px; }
+      .polaroid { padding: 10px 10px 42px; }
+      .polaroid-frame { width: 146px; height: 146px; }
+      .polaroid-caption { font-size: 15px; }
       .timeline__item { grid-template-columns: 64px 1fr; gap: 14px; }
       .gallery { grid-template-columns: 1fr; }
       .buttons { flex-direction: column; }
@@ -541,7 +676,12 @@
   <main class="page">
     <article class="invite">
       <section class="section cover" id="top">
-        <div class="cover-art" aria-hidden="true"></div>
+        <div class="cover-heart-line" aria-hidden="true">
+          <svg viewBox="0 0 560 92" preserveAspectRatio="none">
+            <path d="M0 52 C92 -8 178 40 266 47 C366 55 448 36 560 -10"></path>
+          </svg>
+          <span class="cover-heart">♥</span>
+        </div>
         <div class="cover-copy">
           <p class="lbl">Приглашение на свадьбу</p>
           <h1>Влад <span class="amp">&amp;</span> Настя</h1>
@@ -565,6 +705,32 @@
         <p class="text">27 сентября 2026 года мы будем очень рады видеть вас на нашем свадебном празднике.</p>
         <div class="buttons">
           <button type="button" class="btn btn--ghost" id="addToCalendar">Добавить в календарь</button>
+        </div>
+      </section>
+
+      <section class="section childhood reveal" id="childhood">
+        <div class="heart-line heart-line--top" aria-hidden="true">
+          <svg viewBox="0 0 420 48"><path d="M0 6 C75 60 165 32 250 16 C306 6 354 12 420 4"></path></svg>
+          <span class="heart">♥</span>
+        </div>
+        <div class="childhood-title">Мы женимся!</div>
+        <div class="child-photos">
+          <figure class="polaroid polaroid--vlad">
+            <div class="polaroid-frame">
+              <img src="./assets/child-vlad-cutout.png" alt="Владислав в детстве" loading="lazy">
+            </div>
+            <figcaption class="polaroid-caption">жених Влад</figcaption>
+          </figure>
+          <figure class="polaroid polaroid--nastya">
+            <div class="polaroid-frame">
+              <img src="./assets/child-nastya-cutout.png" alt="Анастасия в детстве" loading="lazy">
+            </div>
+            <figcaption class="polaroid-caption">невеста Настя</figcaption>
+          </figure>
+        </div>
+        <div class="heart-line heart-line--bottom" aria-hidden="true">
+          <svg viewBox="0 0 420 48"><path d="M0 6 C75 60 165 32 250 16 C306 6 354 12 420 4"></path></svg>
+          <span class="heart">♥</span>
         </div>
       </section>
 
@@ -646,8 +812,8 @@
           <div class="swatch"><div class="swatch__color" style="background: var(--milk);"></div><div class="swatch__label">Молочный</div></div>
         </div>
         <div class="gallery">
-          <figure><img src="assets/decor-tables.png" alt="Пример оформления гостевых столов" loading="lazy"></figure>
-          <figure><img src="assets/decor-moodboard.png" alt="Мудборд оформления и палитры" loading="lazy"></figure>
+          <figure><img src="./assets/decor-tables.png" alt="Пример оформления гостевых столов" loading="lazy"></figure>
+          <figure><img src="./assets/decor-moodboard.png" alt="Мудборд оформления и палитры" loading="lazy"></figure>
         </div>
       </section>
 
