@@ -526,6 +526,12 @@
       margin-top: 34px;
     }
 
+    .gallery--single {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
     .gallery figure {
       margin: 0;
       border: 1px solid rgba(176, 156, 128, .45);
@@ -539,6 +545,13 @@
       object-fit: cover;
       aspect-ratio: 4 / 3;
       transition: transform .6s var(--ease);
+    }
+
+    .gallery--single img {
+      height: auto;
+      object-fit: contain;
+      aspect-ratio: auto;
+      display: block;
     }
 
     .gallery figure:hover img { transform: scale(1.05); }
@@ -811,9 +824,8 @@
           <div class="swatch"><div class="swatch__color" style="background: var(--sand);"></div><div class="swatch__label">Беж</div></div>
           <div class="swatch"><div class="swatch__color" style="background: var(--milk);"></div><div class="swatch__label">Молочный</div></div>
         </div>
-        <div class="gallery">
-          <figure><img src="./assets/decor-tables.png" alt="Пример оформления гостевых столов" loading="lazy"></figure>
-          <figure><img src="./assets/decor-moodboard.png" alt="Мудборд оформления и палитры" loading="lazy"></figure>
+        <div class="gallery gallery--single">
+          <figure><img src="./assets/dress-code-inspiration.jpeg" alt="Примеры образов для дресс-кода" loading="lazy"></figure>
         </div>
       </section>
 
