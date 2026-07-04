@@ -634,6 +634,37 @@
 
     .contact a { color: var(--terra); text-underline-offset: 4px; }
 
+    /* ---- final photo ---- */
+    .final-photo {
+      background: #fbfaf7;
+    }
+
+    .final-photo__frame {
+      margin: 30px auto 0;
+      padding: 12px 12px 24px;
+      max-width: 360px;
+      background: #fff;
+      box-shadow: 0 16px 34px rgba(67, 57, 47, .14);
+      transform: rotate(-1.5deg);
+    }
+
+    .final-photo__frame img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .final-photo__caption {
+      margin: 22px 0 0;
+      color: var(--terra-dark);
+      font-family: var(--serif);
+      font-size: clamp(42px, 10vw, 58px);
+      font-weight: 400;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
     /* ---- footer ---- */
     .footer {
       padding: 38px 48px;
@@ -686,6 +717,7 @@
       .polaroid--nastya { transform: rotate(6deg) translateX(-4px) translateY(16px); }
       .polaroid-frame { width: 138px; height: 138px; }
       .polaroid-caption { left: 8px; right: 8px; font-size: 12px; letter-spacing: .06em; text-align: center; }
+      .final-photo__frame { max-width: 300px; }
       .timeline__item { grid-template-columns: 64px 1fr; gap: 14px; }
       .gallery { grid-template-columns: 1fr; }
       .buttons { flex-direction: column; }
@@ -867,6 +899,14 @@
         <h2>До встречи</h2>
         <p class="contact">По всем вопросам можно обратиться к организатору нашей свадьбы Оксане:<br><a href="tel:+79055514536">8 (905) 551-45-36</a></p>
         <p class="contact">Контакт координатора добавим ближе к празднику.</p>
+      </section>
+
+      <section class="section final-photo reveal" id="final">
+        <p class="lbl">Влад &amp; Настя</p>
+        <figure class="final-photo__frame">
+          <img src="./assets/adult-photo-web.jpg" alt="Владислав и Анастасия" loading="lazy">
+          <figcaption class="final-photo__caption">Ждём вас!</figcaption>
+        </figure>
       </section>
 
       <footer class="footer">
